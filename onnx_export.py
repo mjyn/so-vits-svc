@@ -8,11 +8,12 @@ import onnxoptimizer
 import torch
 from model_onnx import SynthesizerTrn
 import utils
+import sys
 from hubert import hubert_model_onnx
 
 def main(HubertExport,NetExport):
 
-    path = "yuzu"
+    path = sys.argv[1]
 
     if(HubertExport):
         device = torch.device("cuda")
